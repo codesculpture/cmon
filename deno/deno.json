@@ -1,0 +1,6 @@
+{
+	"tasks": {
+		"dev": "deno run  --allow-write --allow-read --allow-run main.ts ./tests/test.cpp",
+		"build": "deno compile --allow-write --allow-run --allow-read main.ts"
+	}
+}

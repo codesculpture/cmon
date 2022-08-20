@@ -1,4 +1,6 @@
 # Cmon
+![Logo](/media/logo/cmon-logo-200x200.png)
+
 Command-Line-Interface for watching C++ Programs and executing it.
 
 No More Compile and Execute.
@@ -13,14 +15,14 @@ Just it needs the File Name of the Program.
 ### Samples
 It is Just a C++ Program.
 
-![A Program](/screenShots/1.png)
+![A Program](/media/screenShots/1.png)
 
 And then we just call our Binary with the filename of Program
-![Calling](/screenShots/2.png)
+![Calling](/media/screenShots/2.png)
 Then it starts to *watch*
 
 If some changes occur in source file the watcher will recompile and execute it.
-![ReCompile](/screenShots/3.png)
+![ReCompile](/media/screenShots/3.png)
 
 
 ### Compiling Source 

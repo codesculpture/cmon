@@ -1,6 +1,6 @@
 {
 	"tasks": {
-		"dev": "deno run  --allow-write --allow-read --allow-run main.ts ./tests/test.cpp",
-		"build": "deno compile --allow-write --allow-run --allow-read main.ts"
+		"dev": "deno run --allow-env --allow-write --allow-read --allow-run main.ts",
+		"build": "deno compile --allow-env --output ../build/deno/cmon.exe --allow-write --allow-run --allow-read main.ts"
 	}
 }

@@ -1,8 +1,9 @@
 .vim 
-test
+tests
 *.exe
 build
 native-cpp
 .gitignore
-
 deno/binaries
+.env
+.gitignore

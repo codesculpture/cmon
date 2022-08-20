@@ -1,5 +1,20 @@
 import { bold, blue,green, red, yellow, italic} from "https://deno.land/std@0.74.0/fmt/colors.ts";
-import checkFolder from "./src/checkFolder.ts";
+import {checkFolder, showVersion} from "./src/index.ts";
+
+const printFileError = (): void => {
+	console.log(red(bold("Error At Loading File. Please Make Sure You provided correct Name")));
+}
+
+
+if(Deno.args[0] == undefined) {
+	printFileError();
+	Deno.exit(0);
+}
+if(Deno.args[0] == 'version') {
+	console.log(bold(yellow('Version')));
+	console.log(showVersion());
+	Deno.exit(0);
+}
 
 const PATH = Deno.args[0];
 
@@ -8,9 +23,6 @@ const fileNameArr = Deno.args[0].split('/');
 const FILE_NAME = fileNameArr.at(-1);
 
 
-const printFileError = (): void => {
-	console.log(red(bold("Error At Loading File. Please Make Sure You provided correct Name")));
-}
 if(!FILE_NAME) {
 	printFileError();
 	Deno.exit(0);

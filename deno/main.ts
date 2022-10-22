@@ -1,5 +1,5 @@
 import { bold, blue,green, red, yellow, italic} from "https://deno.land/std@0.74.0/fmt/colors.ts";
-import {checkFolder, showVersion} from "./src/index.ts";
+import {checkFolder, generateTemplate, showVersion} from "./src/index.ts";
 
 const printFileError = (): void => {
 	console.log(red(bold("Error At Loading File. Please Make Sure You provided correct Name")));
@@ -7,15 +7,19 @@ const printFileError = (): void => {
 
 
 if(Deno.args[0] == undefined) {
-	printFileError();
+	console.log(bold(blue("Welcome To CMON :) !@^%&*(@!")));
 	Deno.exit(0);
 }
-if(Deno.args[0] == 'version') {
+else if(Deno.args[0] == 'version') {
 	console.log(bold(yellow('Version')));
 	console.log(showVersion());
 	Deno.exit(0);
 }
 
+else if(Deno.args[0] == 'gen' && Deno.args[1]){
+	generateTemplate(Deno.args[1]);
+	Deno.exit(0);
+}
 const PATH = Deno.args[0];
 
 const fileNameArr = Deno.args[0].split('/');

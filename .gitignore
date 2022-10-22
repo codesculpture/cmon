@@ -2,6 +2,9 @@
 tests
 *.exe
 build
+rust
+go
+cpp
 native-cpp
 .gitignore
 deno/binaries

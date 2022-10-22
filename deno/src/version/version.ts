@@ -1,7 +1,6 @@
-import "https://deno.land/x/dotenv/load.ts";
-
+import meta from '../../metadata.json' assert {type: "json"};
 const showVersion = (): string | undefined => {
-	return Deno.env.get('VERSION');
+	return meta.version;
 }
 
 export default showVersion;

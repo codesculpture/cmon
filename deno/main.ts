@@ -17,7 +17,7 @@ else if(Deno.args[0] == 'version') {
 }
 
 else if(Deno.args[0] == 'gen' && Deno.args[1]){
-	generateTemplate(Deno.args[1]);
+	await generateTemplate(Deno.args[1]);
 	Deno.exit(0);
 }
 const PATH = Deno.args[0];

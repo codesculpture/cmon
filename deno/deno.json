@@ -1,6 +1,7 @@
 {
 	"tasks": {
-		"dev": "deno run --allow-env --allow-write --allow-read --allow-run main.ts",
-		"build": "deno compile --allow-env --output ../build/deno/cmon.exe --allow-write --allow-run --allow-read main.ts"
-	}
+		"dev": "deno run -A main.ts",
+		"build": "deno compile -A --output ../build/deno/cmon.exe  main.ts"
+	},
+	"importMap": "./import_map.json"
 }

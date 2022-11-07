@@ -1,4 +1,6 @@
 import {printError, printSuccess} from "../index.ts";
+import { exists } from "deps";
+
 const content = `#include<bits/stdc++.h>
 #define ll long long
 #define vi vector<int>
@@ -21,11 +23,20 @@ int main() {
 `
 
 
-const generateTemplate = (name: string): void => {
+const generateTemplate = async(name: string): Promise<void> => {
 
 	try{
-	Deno.writeTextFile(name+".cpp", content);
-	printSuccess(`Created Template ${name}.cpp Open in your Code Editor`);
+		name += ".cpp";
+		if(await exists(name)){
+	printError({name: 'Already File Exists', code: 'FILE_EXIST'});
+	const choice = prompt("Do You Want to override the file [Y]:");
+	if(!(choice == "Y" || choice == "y")){
+		printSuccess(`Terminated`);
+		return;
+		}
+		}
+	Deno.writeTextFile(name, content);
+	printSuccess(`Created Template ${name} Open in your Code Editor`);
 	}
 	catch(e){
 	printError({name: 'At Creating Template', code: e.message})
